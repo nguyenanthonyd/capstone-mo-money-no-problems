@@ -8,19 +8,21 @@ public class HomeScreen {
 
     public static void homeScreen() {
 
-        // Run the homeScreen in a do- while loop until the user exits the menu.
+
         TransactionFileHelper transactionFileHelper = new TransactionFileHelper();
+        // Instantiates (create) an object to help read and write transactions to the transactions.csv file.
         Scanner scanner = new Scanner(System.in);
         char choice = ' ';
-
+        // Run the homeScreen in a do- while loop until the user exits the menu
         do {
+            // Displays the home screen
             System.out.println("\n===$$$ MO' MONEY NO PROBLEMS MENU $$$===");
             System.out.println("D) Add Deposit");
             System.out.println("P) Make Payment (Debit)");
             System.out.println("L) Ledger - display the ledger screen");
             System.out.println("X) Exit ");
 
-            String line = scanner.nextLine().trim();
+            String line = scanner.nextLine().trim(); // removes extra spaces so inputs aren't misread
             if (line.isEmpty()) {
                 System.out.println("No input detected yo. Choose a letter from the menu homie/homette.");
                 continue;
@@ -77,7 +79,7 @@ public class HomeScreen {
             }
 
         } while (choice != 'X');
-
+          // Loops repeats until user chooses x
 
     }
 }

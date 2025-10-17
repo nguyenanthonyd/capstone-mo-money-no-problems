@@ -8,6 +8,8 @@ public class LedgerScreen {
     public static void ledgerScreen() {
         TransactionFileHelper helper = new TransactionFileHelper();
         ArrayList<Transaction> transactionList = helper.readAllTransactions();
+        /*Ask the helper object to read all the transactions from the file,
+        and store them inside a list called transactionList*/
         Scanner scanner = new Scanner(System.in);
         char choice = ' ';
 
@@ -22,7 +24,7 @@ public class LedgerScreen {
 
             String line = scanner.nextLine().trim();
             if (line.isEmpty()) {
-                System.out.println("No input detected dawg! — Choose a lletter from the menu.");
+                System.out.println("No input detected dawg! — Choose a letter from the menu.");
                 continue; // goes back to start of the loop
             }
             choice = Character.toUpperCase(line.charAt(0));

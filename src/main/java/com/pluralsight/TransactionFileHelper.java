@@ -14,6 +14,7 @@ public class TransactionFileHelper {
     public void writeTransaction(String transactionline) {
         try {
             // FileWriter - to open the file
+            // This method adds one new transaction line to your CSV file.
             FileWriter writer = new FileWriter(TRANSACTIONS, true);
             PrintWriter writer2 = new PrintWriter(writer);
 
@@ -37,7 +38,7 @@ public class TransactionFileHelper {
         File file = new File(TRANSACTIONS);
 
         if (!file.exists()) {
-            // No file yet? Return empty list
+            // No file yet? Return empty list without crashing
             return transactions;
         }
 
@@ -46,7 +47,8 @@ public class TransactionFileHelper {
             String line;
 
             // Go line by line
-            while ((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) { /*Reads one line at a time. Removes extra spaces.
+                                                                       Skips empty lines.*/
                 line = line.trim();
                 if (line.isEmpty()) continue;
 

@@ -4,7 +4,7 @@ package com.pluralsight;
 
 public class Main {
     public static void main(String[] args) {
-        HomeScreen.homeScreen(); // Called my menu here
+        HomeScreen.homeScreen(); // Called l menu here
 
 
 
