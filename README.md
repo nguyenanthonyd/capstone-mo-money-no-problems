@@ -46,7 +46,8 @@ date|time|description|vendor|amount
 <img width="1918" height="1014" alt="Screenshot 2025-10-16 214624" src="https://github.com/user-attachments/assets/4e9684db-bfe4-479b-a716-b3d5e4ad6935" />
 
 
-*(Images show sample terminal outputs from running the program.)*
+<img width="1808" height="889" alt="Screenshot 2025-10-16 215358" src="https://github.com/user-attachments/assets/b545209b-04c7-4d5c-b4ef-51b060e61858" />
+
 
 ---
 
