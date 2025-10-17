@@ -29,10 +29,22 @@ date|time|description|vendor|amount
 
 
 ### 📒 Ledger Screen
-![Ledger Screen](images/ledger-screen.png)
+<img width="1919" height="1012" alt="Screenshot 2025-10-16 214210" src="https://github.com/user-attachments/assets/f8faa1be-8813-4c37-a4ee-f1bb544f2174" />
+<img width="1914" height="1015" alt="Screenshot 2025-10-16 214246" src="https://github.com/user-attachments/assets/149b9461-c8ba-4eba-976b-93251261d165" />
+<img width="1916" height="1014" alt="Screenshot 2025-10-16 214305" src="https://github.com/user-attachments/assets/24975458-df44-480e-a89e-100118cea57d" />
+
+
+
 
 ### 📊 Reports Screen
-![Reports Screen](images/reports-screen.png)
+<img width="1919" height="1013" alt="Screenshot 2025-10-16 214441" src="https://github.com/user-attachments/assets/b237a93b-b5b9-4418-a5b3-68f9c23fcaa1" />
+<img width="1919" height="1014" alt="Screenshot 2025-10-16 214456" src="https://github.com/user-attachments/assets/3b01ecf9-abb3-48b6-8ba3-dfbc486901ca" />
+<img width="1919" height="1014" alt="Screenshot 2025-10-16 214456" src="https://github.com/user-attachments/assets/4ed88ff2-d421-429f-a6d9-55400b213b73" />
+<img width="1918" height="1012" alt="Screenshot 2025-10-16 214510" src="https://github.com/user-attachments/assets/2743392a-cede-44ea-8b37-17eee0714a2d" />
+<img width="1909" height="1009" alt="Screenshot 2025-10-16 214526" src="https://github.com/user-attachments/assets/0827bd38-eb6e-4d8e-a78b-2ff95352c865" />
+<img width="1919" height="1010" alt="Screenshot 2025-10-16 214538" src="https://github.com/user-attachments/assets/c21ad874-59c3-46e1-8b0e-229456a6d96a" />
+<img width="1918" height="1014" alt="Screenshot 2025-10-16 214624" src="https://github.com/user-attachments/assets/4e9684db-bfe4-479b-a716-b3d5e4ad6935" />
+
 
 *(Images show sample terminal outputs from running the program.)*
 
