@@ -9,7 +9,7 @@ public class LedgerScreen {
         TransactionFileHelper helper = new TransactionFileHelper();
         ArrayList<Transaction> transactionList = helper.readAllTransactions();
         /*Ask the helper object to read all the transactions from the file,
-        and store them inside a list called transactionList*/
+        and store them inside an array list called transactionList*/
         Scanner scanner = new Scanner(System.in);
         char choice = ' ';
 
