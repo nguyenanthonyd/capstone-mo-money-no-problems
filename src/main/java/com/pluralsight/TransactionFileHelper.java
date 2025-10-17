@@ -78,4 +78,3 @@ public class TransactionFileHelper {
 }
 
 
-// This reads all transactions from the file and returns them as a list
