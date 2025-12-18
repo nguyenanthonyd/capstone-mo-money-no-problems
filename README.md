@@ -22,7 +22,7 @@ date|time|description|vendor|amount
 ---
 
 ### 🏠 Home Screen
-<img width="1919" height="1013" alt="Screenshot 2025-10-16 213704" 
+<img width="1919" height="1013" alt="Screenshot 2025-10-16 213704" src="https://github.com/user-attachments/assets/5be75b53-d0c2-4fdc-8874-ab5ad92ac282" />
 <img width="1919" height="1013" alt="Screenshot 2025-10-16 213722" src="https://github.com/user-attachments/assets/8986e3a8-4526-460c-8da1-d463e659b2c4" />
 <img width="1919" height="1013" alt="Screenshot 2025-10-16 213722" src="https://github.com/user-attachments/assets/b89bf4d5-42bd-425c-b772-fa225a7c428d" />
 
