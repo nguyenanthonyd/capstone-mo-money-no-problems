@@ -15,11 +15,11 @@ public class LedgerScreen {
 
         do {
             System.out.println("\n===$$$ LEDGER MENU $$$===");
-            System.out.println("A) All - Displays all entries");
-            System.out.println("D) Deposits - Displays only the entries that are deposits into the account");
-            System.out.println("P) Payments - Display only the negative entries (or payments)");
-            System.out.println("R) Reports - A new screen that allows the user to run pre-defined reports");
-            System.out.println("H) Home - Go back to the Home Screen");
+            System.out.println("A) All: Displays all entries");
+            System.out.println("D) Deposits: Displays only the entries that are deposits into the account");
+            System.out.println("P) Payments: Display only the negative entries (or payments)");
+            System.out.println("R) Reports: A new screen that allows the user to run pre-defined reports");
+            System.out.println("H) Home: Go back to the Home Screen");
             System.out.println("===$$$ LEDGER MENU $$$===");
 
             String line = scanner.nextLine().trim();
@@ -34,31 +34,31 @@ public class LedgerScreen {
 
             switch (choice) {
                 case 'A':
-                    System.out.println("All - Display all entries");
+                    System.out.println("All: Display all entries");
                     displayAllTransactions(transactionList);
                     break;
 
                 case 'D':
-                    System.out.println("Deposits - Displays only the entries that are deposits into the account");
+                    System.out.println("Deposits: Displays only the entries that are deposits into the account");
                     displayAllDeposits(transactionList);
                     break;
 
                 case 'P':
-                    System.out.println("Payments - Display only negative entries (or payments)");
+                    System.out.println("Payments: Display only negative entries (or payments)");
                     displayAllPayments(transactionList);
                     break;
                 // switches to ledger page with different options
 
 
                 case 'R':
-                    System.out.println("Reports - A new screen that allows the user to run pre-defined reports");
+                    System.out.println("Reports: A new screen that allows the user to run pre-defined reports");
                     ReportScreen.reportScreen();// refresh
                     // refresh list in case new transactions were added elsewhere
                     transactionList = helper.readAllTransactions();
                     break;
 
                 case 'H':
-                    System.out.println("Home - Goes back to home screen");
+                    System.out.println("Home: Goes back to home screen");
                     // Goes back to home screen
                     break;
 

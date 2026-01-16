@@ -18,12 +18,12 @@ public class ReportScreen {
 
         do {
             System.out.println("\n===$$$ REPORT MENU $$$===");
-            System.out.println("1) Month To Date");
-            System.out.println("2) Previous Month");
-            System.out.println("3) Year to Date");
-            System.out.println("4) Previous Year");
-            System.out.println("5) Search by Vendor - prompt the use for the vendor name and display all it's entries");
-            System.out.println("0) Back - Go back to Ledger page");
+            System.out.println("1) Month To Date:");
+            System.out.println("2) Previous Month:");
+            System.out.println("3) Year to Date:");
+            System.out.println("4) Previous Year:");
+            System.out.println("5) Search by Vendor: Prompt the use for the vendor name and display all it's entries:");
+            System.out.println("0) Back: Go back to Ledger page:");
             System.out.println("===$$$ REPORT MENU $$$===");
 
             String line = scanner.nextLine().trim();

@@ -17,9 +17,9 @@ public class HomeScreen {
         do {
             // Displays the home screen
             System.out.println("\n===$$$ MO' MONEY NO PROBLEMS MENU $$$===");
-            System.out.println("D) Add Deposit");
-            System.out.println("P) Make Payment (Debit)");
-            System.out.println("L) Ledger - display the ledger screen");
+            System.out.println("D) Add Deposit:");
+            System.out.println("P) Make Payment: (Debit):");
+            System.out.println("L) Ledger: Display the ledger screen:");
             System.out.println("X) Exit ");
 
             String line = scanner.nextLine().trim(); // removes extra spaces so inputs aren't misread
