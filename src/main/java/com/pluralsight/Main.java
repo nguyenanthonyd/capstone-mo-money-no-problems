@@ -1,10 +1,18 @@
 package com.pluralsight;
 
 
+import models.Transaction;
+import mysql.MySqlTransactionDao;
+
 
 public class Main {
     public static void main(String[] args) {
-        HomeScreen.homeScreen(); // Called  menu here
+        //HomeScreen.homeScreen(); // Called  menu here
+
+        MySqlTransactionDao mySqlTransactionDao = null;
+        for(Transaction t: mySqlTransactionDao.getAllTransactions()) {
+            System.out.println(t);
+        }
 
 
 

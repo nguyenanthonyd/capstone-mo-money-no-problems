@@ -1,5 +1,6 @@
 package models;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 
@@ -54,7 +55,7 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
