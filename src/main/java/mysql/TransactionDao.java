@@ -1,6 +1,6 @@
 package mysql;
 
-import com.pluralsight.Transaction;
+import models.Transaction;
 
 import java.util.List;
 

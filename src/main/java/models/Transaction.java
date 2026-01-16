@@ -1,5 +1,6 @@
 package models;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Transaction {
@@ -7,18 +8,18 @@ public class Transaction {
     private String description;
     private String vendorName;
     private double amount;
-    private LocalDateTime dateTime;
+    private LocalDate date;
 
     public Transaction() {
 
     }
 
-    public Transaction(int transactionId, String description, String vendorName, double amount, LocalDateTime dateTime) {
+    public Transaction(int transactionId, String description, String vendorName, double amount, LocalDate date) {
         this.transactionId = transactionId;
         this.description = description;
         this.vendorName = vendorName;
         this.amount = amount;
-        this.dateTime = dateTime;
+        this.date = date;
     }
 
     public int getTransactionId() {
@@ -53,11 +54,11 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
