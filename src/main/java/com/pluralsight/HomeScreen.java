@@ -6,80 +6,118 @@ import java.util.Scanner;
 
 public class HomeScreen {
 
-    public static void homeScreen() {
 
 
-        TransactionFileHelper transactionFileHelper = new TransactionFileHelper();
-        // Instantiates (create) an object to help read and write transactions to the transactions.csv file.
-        Scanner scanner = new Scanner(System.in);
-        char choice = ' ';
-        // Run the homeScreen in a do- while loop until the user exits the menu
-        do {
-            // Displays the home screen
-            System.out.println("\n===$$$ MO' MONEY NO PROBLEMS MENU $$$===");
-            System.out.println("D) Add Deposit:");
-            System.out.println("P) Make Payment: (Debit)");
-            System.out.println("L) Ledger: Display the ledger screen:");
-            System.out.println("X) Exit ");
+        public static void homeScreen() {
 
-            String line = scanner.nextLine().trim(); // removes extra spaces so inputs aren't misread
-            if (line.isEmpty()) {
-                System.out.println("No input detected. Choose a letter from the menu.");
-                continue;
-            }
-            choice = Character.toUpperCase(line.charAt(0));
-            // Chain of method that reads user input from the keyboard
-            // Converts to uppercase and takes the first character
 
-            switch (choice) {
+            TransactionFileHelper transactionFileHelper = new TransactionFileHelper();
+            Scanner scanner = new Scanner(System.in);
+            char choice = ' ';
 
-                case 'D':
-                    System.out.println("Add Deposit selected");
-                    LocalDate date = LocalDate.now();
-                    LocalTime time = LocalTime.now();
-                    System.out.println("Enter description");
-                    String description = scanner.nextLine();
-                    System.out.println("Enter vendor");
-                    String vendor = scanner.nextLine();
-                    System.out.println("Enter amount");
-                    double amount = Double.parseDouble(scanner.nextLine());
-                    String transaction = date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
-                    transactionFileHelper.writeTransaction(transaction);
-                    //date|time|description|vendor|amount
-                    break;
-                //  public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount)
-                case 'P':
-                    System.out.println("Make Payment selected");
-                    LocalDate dateP = LocalDate.now();
-                    LocalTime timeP = LocalTime.now();
-                    System.out.println("Enter description");
-                    String descriptionP = scanner.nextLine();
-                    System.out.println("Enter vendor");
-                    String vendorP = scanner.nextLine();
-                    System.out.println("Enter amount");
-                    double amountP = -1 * Double.parseDouble(scanner.nextLine());
-                    String transactionP = dateP + "|" + timeP + "|" + descriptionP + "|" + vendorP + "|" + amountP;
-                    transactionFileHelper.writeTransaction(transactionP);
-                    //date|time|description|vendor|amount
-                    break;
+            do {
+                // MENU HEADER
+                System.out.println(
+                        Colors.BOLD + Colors.GREEN +
+                                "\n===$$$ MO' MONEY NO PROBLEMS MENU $$$===" +
+                                Colors.RESET
+                );
 
-                case 'L':
-                    System.out.println("Switching to the ledger screen...");
-                    // switches to ledger page with different options
-                    LedgerScreen.ledgerScreen();
-                    break;
+                System.out.println(Colors.CYAN + "D) Add Deposit" + Colors.RESET);
+                System.out.println(Colors.YELLOW + "P) Make Payment (Debit)" + Colors.RESET);
+                System.out.println(Colors.BLUE + "L) Ledger - display the ledger screen" + Colors.RESET);
+                System.out.println(Colors.RED + "X) Exit" + Colors.RESET);
 
-                case 'X':
-                    System.out.println("Thank you!");
-                    break;
+                String line = scanner.nextLine().trim();
 
-                default:
-                    System.out.println("Invalid choice!");
+                if (line.isEmpty()) {
+                    System.out.println(Colors.RED + "No input detected. Choose a letter from the menu!" + Colors.RESET);
+                    continue;
+                }
 
-            }
+                choice = Character.toUpperCase(line.charAt(0));
 
-        } while (choice != 'X');
-          // Loops repeats until user chooses x
+                switch (choice) {
 
+                    case 'D':
+                        System.out.println(Colors.GREEN + "Add Deposit selected 💰" + Colors.RESET);
+
+                        LocalDate date = LocalDate.now();
+                        LocalTime time = LocalTime.now();
+
+                        System.out.println(Colors.CYAN + "Enter description:" + Colors.RESET);
+                        String description = scanner.nextLine();
+
+                        System.out.println(Colors.CYAN + "Enter vendor:" + Colors.RESET);
+                        String vendor = scanner.nextLine();
+
+                        System.out.println(Colors.CYAN + "Enter amount:" + Colors.RESET);
+
+                        double amount;
+
+                        while (true) {
+                            String input = scanner.nextLine().trim();
+
+                            try {
+                                amount = Double.parseDouble(input);
+                                break;
+                            } catch (NumberFormatException e) {
+                                System.out.println(Colors.RED + "Invalid number. Please enter a valid amount:" + Colors.RESET);
+                            }
+                        }
+
+                        String transaction = date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
+                        transactionFileHelper.writeTransaction(transaction);
+
+                        System.out.println(Colors.GREEN + "Deposit saved successfully! ✅" + Colors.RESET);
+                        break;
+
+                    case 'P':
+                        System.out.println(Colors.YELLOW + "Make Payment selected 💳" + Colors.RESET);
+
+                        LocalDate dateP = LocalDate.now();
+                        LocalTime timeP = LocalTime.now();
+
+                        System.out.println(Colors.CYAN + "Enter description:" + Colors.RESET);
+                        String descriptionP = scanner.nextLine();
+
+                        System.out.println(Colors.CYAN + "Enter vendor:" + Colors.RESET);
+                        String vendorP = scanner.nextLine();
+
+                        System.out.println(Colors.CYAN + "Enter amount:" + Colors.RESET);
+
+                        double amountP;
+
+                        while (true) {
+                            String input = scanner.nextLine().trim();
+
+                            try {
+                                amountP = Double.parseDouble(input);
+                                break;
+                            } catch (NumberFormatException e) {
+                                System.out.println(Colors.RED + "Invalid number. Please enter a valid amount:" + Colors.RESET);
+                            }
+                        }
+
+                        String transactionP = dateP + "|" + timeP + "|" + descriptionP + "|" + vendorP + "|" + amountP;
+                        transactionFileHelper.writeTransaction(transactionP);
+
+                        System.out.println(Colors.GREEN + "Payment recorded successfully! ✅" + Colors.RESET);
+                        break;
+
+                    case 'L':
+                        System.out.println(Colors.BLUE + "Cruisin' to the ledger screen... 📘" + Colors.RESET);
+                        LedgerScreen.ledgerScreen();
+                        break;
+
+                    case 'X':
+                        System.out.println(Colors.PURPLE + "Peace! Thanks for using Mo' Money 😎✌️" + Colors.RESET);
+                        break;
+
+                    default:
+                        System.out.println(Colors.RED + "Oh snap, invalid choice! Try again playa!" + Colors.RESET);
+                }
+
+            } while (choice != 'X');
+        }
     }
-}

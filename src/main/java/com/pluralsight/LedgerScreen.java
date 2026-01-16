@@ -5,106 +5,122 @@ import java.util.ArrayList;
 
 public class LedgerScreen {
 
-    public static void ledgerScreen() {
-        TransactionFileHelper helper = new TransactionFileHelper();
-        ArrayList<Transaction> transactionList = helper.readAllTransactions();
-        /*Ask the helper object to read all the transactions from the file,
-        and store them inside an array list called transactionList*/
-        Scanner scanner = new Scanner(System.in);
-        char choice = ' ';
 
-        do {
-            System.out.println("\n===$$$ LEDGER MENU $$$===");
-            System.out.println("A) All: Displays all entries");
-            System.out.println("D) Deposits: Displays only the entries that are deposits into the account");
-            System.out.println("P) Payments: Display only the negative entries (or payments)");
-            System.out.println("R) Reports: A new screen that allows the user to run pre-defined reports");
-            System.out.println("H) Home: Go back to the Home Screen");
-            System.out.println("===$$$ LEDGER MENU $$$===");
+            public static void ledgerScreen() {
+            TransactionFileHelper helper = new TransactionFileHelper();
+            ArrayList<Transaction> transactionList = helper.readAllTransactions();
 
-            String line = scanner.nextLine().trim();
-            if (line.isEmpty()) {
-                System.out.println("No input detected! — Choose a letter from the menu.");
-                continue; // goes back to start of the loop
-            }
-            choice = Character.toUpperCase(line.charAt(0));
+            Scanner scanner = new Scanner(System.in);
+            char choice = ' ';
 
-            // Chain of method that reads user input from the keyboard,
-            // Converts to uppercase and takes the first character.
+            do {
+                System.out.println(
+                        Colors.BOLD + Colors.PURPLE +
+                                "\n===$$$ LEDGER MENU $$$===" +
+                                Colors.RESET
+                );
 
-            switch (choice) {
-                case 'A':
-                    System.out.println("All: Display all entries");
-                    displayAllTransactions(transactionList);
-                    break;
+                System.out.println(Colors.CYAN + "A) All - Displays all entries" + Colors.RESET);
+                System.out.println(Colors.GREEN + "D) Deposits - Displays only deposits" + Colors.RESET);
+                System.out.println(Colors.RED + "P) Payments - Displays only payments" + Colors.RESET);
+                System.out.println(Colors.YELLOW + "R) Reports - Run pre-defined reports" + Colors.RESET);
+                System.out.println(Colors.BLUE + "H) Home - Go back to Home Screen" + Colors.RESET);
 
-                case 'D':
-                    System.out.println("Deposits: Displays only the entries that are deposits into the account");
-                    displayAllDeposits(transactionList);
-                    break;
+                System.out.println(Colors.BOLD + "===$$$ Pick yo poison tell me watcha doin' $$$===" + Colors.RESET);
 
-                case 'P':
-                    System.out.println("Payments: Display only negative entries (or payments)");
-                    displayAllPayments(transactionList);
-                    break;
-                // switches to ledger page with different options
+                String line = scanner.nextLine().trim();
 
+                if (line.isEmpty()) {
+                    System.out.println(Colors.RED + "No input detected dawg! — Choose a letter from the menu." + Colors.RESET);
+                    continue;
+                }
 
-                case 'R':
-                    System.out.println("Reports: A new screen that allows the user to run pre-defined reports");
-                    ReportScreen.reportScreen();// refresh
-                    // refresh list in case new transactions were added elsewhere
-                    transactionList = helper.readAllTransactions();
-                    break;
+                choice = Character.toUpperCase(line.charAt(0));
 
-                case 'H':
-                    System.out.println("Home: Goes back to home screen");
-                    // Goes back to home screen
-                    break;
+                switch (choice) {
 
-                case 'X':
-                    System.out.println("Exit");
-                    // Exits
-                    break;
+                    case 'A':
+                        System.out.println(Colors.CYAN + "\nAll - Display all entries" + Colors.RESET);
+                        displayAllTransactions(transactionList);
+                        break;
 
-                default:
-                    System.out.println("Invalid choice! Please try that again");
+                    case 'D':
+                        System.out.println(Colors.GREEN + "\nDeposits - Showing all deposits 💰" + Colors.RESET);
+                        displayAllDeposits(transactionList);
+                        break;
 
+                    case 'P':
+                        System.out.println(Colors.RED + "\nPayments - Showing all payments 💳" + Colors.RESET);
+                        displayAllPayments(transactionList);
+                        break;
 
-            }
+                    case 'R':
+                        System.out.println(Colors.YELLOW + "\nReports Screen 📊" + Colors.RESET);
+                        ReportScreen.reportScreen();
+                        transactionList = helper.readAllTransactions(); // refresh after reports
+                        break;
 
-        } while (choice != 'H');
+                    case 'H':
+                        System.out.println(Colors.BLUE + "Heading back home 🏠" + Colors.RESET);
+                        break;
 
+                    default:
+                        System.out.println(Colors.RED + "Oh snap, invalid choice! Try that again playa!" + Colors.RESET);
+                }
 
-    }
-
-    // Helper Methods
-    public static void displayAllTransactions(ArrayList<Transaction> transactionList) {
-        System.out.println("\n===$$$ FULL TRANSACTION LIST (Most Recent First) $$$===");
-
-        for (var i = transactionList.size() - 1; i >= 0; i--) {
-            System.out.println(transactionList.get(i).toString());
+            } while (choice != 'H');
         }
-    }
 
-    public static void displayAllDeposits(ArrayList<Transaction> transactionList) {
-        System.out.println("\n\n=== LEDGER DEPOSIT LIST (Most Recent First) ===");
+        // ================= HELPER METHODS =================
 
-        for (var i = transactionList.size() - 1; i >= 0; i--) {
-            if (transactionList.get(i).getAmount() >= 0) {
-                System.out.println(transactionList.get(i).toString());
-            }
-        }
-    }
+        public static void displayAllTransactions(ArrayList<Transaction> transactionList) {
 
-    public static void displayAllPayments(ArrayList<Transaction> transactionList) {
-        System.out.println("\n\n=== LEDGER PAYMENT LIST (Most Recent First) ===");
+            System.out.println(
+                    Colors.BOLD + Colors.PURPLE +
+                            "\n===$$$ FULL TRANSACTION LIST (Oldest to Newest) $$$===" +
+                            Colors.RESET
+            );
 
-        for (var i = transactionList.size() - 1; i >= 0; i--) {
-            if (transactionList.get(i).getAmount() < 0) {
-                System.out.println(transactionList.get(i).toString());
+            for (int i = 0; i < transactionList.size(); i++) {
+                Transaction t = transactionList.get(i);
+
+                if (t.getAmount() >= 0) {
+                    System.out.println(Colors.GREEN + t + Colors.RESET);
+                } else {
+                    System.out.println(Colors.RED + t + Colors.RESET);
+                }
             }
         }
 
+        public static void displayAllDeposits(ArrayList<Transaction> transactionList) {
+
+            System.out.println(
+                    Colors.BOLD + Colors.GREEN +
+                            "\n=== LEDGER DEPOSIT LIST (Most Recent First) ===" +
+                            Colors.RESET
+            );
+
+            for (int i = transactionList.size() - 1; i >= 0; i--) {
+                Transaction t = transactionList.get(i);
+                if (t.getAmount() >= 0) {
+                    System.out.println(Colors.GREEN + t + Colors.RESET);
+                }
+            }
+        }
+
+        public static void displayAllPayments(ArrayList<Transaction> transactionList) {
+
+            System.out.println(
+                    Colors.BOLD + Colors.RED +
+                            "\n=== LEDGER PAYMENT LIST (Most Recent First) ===" +
+                            Colors.RESET
+            );
+
+            for (int i = transactionList.size() - 1; i >= 0; i--) {
+                Transaction t = transactionList.get(i);
+                if (t.getAmount() < 0) {
+                    System.out.println(Colors.RED + t + Colors.RESET);
+                }
+            }
+        }
     }
-}
