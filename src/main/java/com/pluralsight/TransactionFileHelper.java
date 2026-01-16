@@ -57,13 +57,13 @@ public class TransactionFileHelper {
                 if (transactionLine.length != 5) continue;
 
                 try {
-                    LocalDate date = LocalDate.parse(transactionLine[0].trim());
-                   //LocalTime time = LocalTime.parse(transactionLine[1].trim());
-                    String description = transactionLine[2].trim();
-                    String vendor = transactionLine[3].trim();
-                    double amount = Double.parseDouble(transactionLine[4].trim());
+                    int ID = Integer.parseInt(transactionLine[0].trim());
+                    LocalDate date = LocalDate.parse(transactionLine[4].trim());
+                    String description = transactionLine[1].trim();
+                    String vendor = transactionLine[2].trim();
+                    double amount = Double.parseDouble(transactionLine[3].trim());
 
-                    Transaction t = new Transaction(date, description, vendor, amount);
+                    Transaction t = new Transaction(ID,description, vendor, amount, date);
                     transactions.add(t);
                 } catch (Exception parseError) {
                 }
