@@ -1,7 +1,7 @@
 package com.pluralsight;
-
 import java.util.Scanner;
 import java.util.ArrayList;
+import models.Transaction;
 
 public class LedgerScreen {
 

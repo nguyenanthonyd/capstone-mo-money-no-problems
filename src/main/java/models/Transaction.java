@@ -1,7 +1,7 @@
 package models;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 public class Transaction {
     private int transactionId;
@@ -10,7 +10,7 @@ public class Transaction {
     private double amount;
     private LocalDate date;
 
-    public Transaction() {
+    public Transaction(LocalDate date, String description, String vendor, double amount) {
 
     }
 
