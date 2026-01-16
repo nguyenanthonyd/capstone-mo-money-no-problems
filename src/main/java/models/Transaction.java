@@ -3,6 +3,7 @@ package models;
 import java.sql.Date;
 import java.time.LocalDate;
 
+
 public class Transaction {
     private int transactionId;
     private String description;
@@ -10,7 +11,7 @@ public class Transaction {
     private double amount;
     private LocalDate date;
 
-    public Transaction() {
+    public Transaction(LocalDate date, String description, String vendor, double amount) {
 
     }
 
@@ -60,5 +61,5 @@ public class Transaction {
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
+     }
 }

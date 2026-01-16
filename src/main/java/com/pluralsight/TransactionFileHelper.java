@@ -2,8 +2,8 @@ package com.pluralsight;
 // Imported wildcards to streamline imports
 import java.io.*; // For reading and writing files.
 import java.util.*; // For Array and List.
-import java.time.LocalTime;
 import java.time.LocalDate;
+import models.Transaction;
 
 
 
@@ -58,12 +58,12 @@ public class TransactionFileHelper {
 
                 try {
                     LocalDate date = LocalDate.parse(transactionLine[0].trim());
-                    LocalTime time = LocalTime.parse(transactionLine[1].trim());
+                   //LocalTime time = LocalTime.parse(transactionLine[1].trim());
                     String description = transactionLine[2].trim();
                     String vendor = transactionLine[3].trim();
                     double amount = Double.parseDouble(transactionLine[4].trim());
 
-                    Transaction t = new Transaction(date, time, description, vendor, amount);
+                    Transaction t = new Transaction(date, description, vendor, amount);
                     transactions.add(t);
                 } catch (Exception parseError) {
                 }
@@ -72,7 +72,7 @@ public class TransactionFileHelper {
             reader.close();
 
         } catch (Exception e) {
-            System.out.println(" Error reading file: " + e.getMessage());
+            System.out.println(" Error reading file:  " + e.getMessage());
         }
 
         return transactions;

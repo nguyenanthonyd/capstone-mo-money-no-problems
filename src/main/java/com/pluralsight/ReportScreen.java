@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.time.LocalDate;
-
+import models.Transaction;
 public class ReportScreen {
 
 
@@ -123,7 +123,7 @@ public class ReportScreen {
         boolean found = false;
 
         for (Transaction t : list) {
-            if (t.getVendor().equalsIgnoreCase(vendor)) {
+            if (t.getVendorName().equalsIgnoreCase(vendor)) {
                 System.out.println(t);
                 found = true;
             }

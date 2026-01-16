@@ -1,7 +1,7 @@
 package com.pluralsight;
-
 import java.util.Scanner;
 import java.util.ArrayList;
+import models.Transaction;
 
 public class LedgerScreen {
 
@@ -14,7 +14,7 @@ public class LedgerScreen {
         char choice = ' ';
 
         do {
-            System.out.println("\n===$$$ LEDGER MENU $$$===");
+            System.out.println("\n===$$$ LEDGER MENU $$$=== ");
             System.out.println("A) All - Displays all entries");
             System.out.println("D) Deposits - Displays only the entries that are deposits into the account");
             System.out.println("P) Payments - Display only the negative entries (or payments)");

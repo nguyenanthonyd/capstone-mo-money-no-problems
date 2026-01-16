@@ -74,7 +74,7 @@ public class HomeScreen {
                     break;
 
                 default:
-                    System.out.println("Oh snap, invalid choice! Try that again playa!");
+                    System.out.println("Oh snap, invalid choice! Try that again playa! ");
 
             }
 
