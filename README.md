@@ -36,6 +36,10 @@ date|time|description|vendor|amount
 
 ### 📊 Reports Screen
 <img width="862" height="236" alt="image" src="https://github.com/user-attachments/assets/22565d15-d87e-4d7c-8fba-c264521999c0" />
+<img width="451" height="261" alt="Screenshot 2026-01-16 095849" src="https://github.com/user-attachments/assets/1655796a-1590-46aa-9d2a-1ad86e628cb1" />
+<img width="621" height="186" alt="Screenshot 2026-01-16 095909" src="https://github.com/user-attachments/assets/4827b75f-5ae9-4357-8732-5691a59a5719" />
+<img width="631" height="151" alt="Screenshot 2026-01-16 100035" src="https://github.com/user-attachments/assets/f99d680f-327b-420e-820c-13badbac17f2" />
+
 
 
 
