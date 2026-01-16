@@ -72,7 +72,7 @@ public class TransactionFileHelper {
             reader.close();
 
         } catch (Exception e) {
-            System.out.println(" Error reading file: " + e.getMessage());
+            System.out.println(" Error reading file:  " + e.getMessage());
         }
 
         return transactions;
