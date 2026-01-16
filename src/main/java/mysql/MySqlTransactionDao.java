@@ -51,6 +51,33 @@ public class MySqlTransactionDao implements TransactionDao {
 
     @Override
     public Transaction create(Transaction transaction) {
+        String sql = """
+                INSERT INTO transactions_db.transactions (description, vendor_name, amount, transaction_time)
+                VALUES (?,?,?,?)""";
+
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, transaction.getDescription());
+            preparedStatement.setString(2, transaction.getVendorName());
+            preparedStatement.setDouble(3, transaction.getAmount());
+            preparedStatement.setDate(4, transaction.getDate());
+
+            preparedStatement.executeUpdate();
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+
+                if (generatedKeys.next()) {
+                    int transactionId = generatedKeys.getInt(1);
+
+                    System.out.println("Transaction added to database");
+                }
+            }
+        } catch(SQLException e) {
+            System.out.println("Error creating new transaction " + e.getMessage());
+        }
         return null;
     }
 

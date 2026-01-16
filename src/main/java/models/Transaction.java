@@ -1,7 +1,7 @@
 package models;
 
+import java.sql.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class Transaction {
     private int transactionId;
@@ -54,7 +54,7 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
