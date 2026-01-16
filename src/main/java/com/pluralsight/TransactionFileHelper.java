@@ -23,10 +23,10 @@ public class TransactionFileHelper {
             writer2.close();
             writer.close();
 
-            System.out.println("Transaction saved to file! Yee!");
+            System.out.println("Transaction saved to file.");
 
         } catch (IOException e) {
-            System.out.println("Oops! Could not write to file: " + e.getMessage());
+            System.out.println("Could not write to file: " + e.getMessage());
         }
     }
 

@@ -24,7 +24,7 @@ public class HomeScreen {
 
             String line = scanner.nextLine().trim(); // removes extra spaces so inputs aren't misread
             if (line.isEmpty()) {
-                System.out.println("No input detected yo. Choose a letter from the menu homie/homette.");
+                System.out.println("No input detected. Choose a letter from the menu.");
                 continue;
             }
             choice = Character.toUpperCase(line.charAt(0));
@@ -64,17 +64,17 @@ public class HomeScreen {
                     break;
 
                 case 'L':
-                    System.out.println("Cruisin' to the ledger screen...");
+                    System.out.println("Switching to the ledger screen...");
                     // switches to ledger page with different options
                     LedgerScreen.ledgerScreen();
                     break;
 
                 case 'X':
-                    System.out.println("Peace!");
+                    System.out.println("Thank you!");
                     break;
 
                 default:
-                    System.out.println("Oh snap, invalid choice! Try that again playa!");
+                    System.out.println("Invalid choice!");
 
             }
 

@@ -24,11 +24,11 @@ public class ReportScreen {
             System.out.println("4) Previous Year");
             System.out.println("5) Search by Vendor - prompt the use for the vendor name and display all it's entries");
             System.out.println("0) Back - Go back to Ledger page");
-            System.out.println("===$$$ Pick yo poison tell me watcha doin' $$$===");
+            System.out.println("===$$$ REPORT MENU $$$===");
 
             String line = scanner.nextLine().trim();
             if (line.isEmpty()) {
-                System.out.println("No input detected yo. Choose a number from the menu homie/homette");
+                System.out.println("No input detected. Choose a number from the menu.");
                 continue;
             }
 
@@ -65,7 +65,7 @@ public class ReportScreen {
                     return;
 
                 default:
-                    System.out.println("Oh snap, invalid choice! Try that again playa!");
+                    System.out.println("Invalid choice.");
                     break;
             }
 
@@ -130,7 +130,7 @@ public class ReportScreen {
         }
 
         if (!found) {
-            System.out.println("No transactions found for vendor G!: " + vendor);
+            System.out.println("No transactions found for vendor: " + vendor);
         }
     }
 }

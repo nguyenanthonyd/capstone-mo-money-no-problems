@@ -65,6 +65,6 @@ public class Transaction {
     // --- Transaction Format ---
     @Override
     public String toString() {
-        return date + " | " + time + " | " + description + " | " + vendor + " | " + amount;
+        return date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
     }
 }

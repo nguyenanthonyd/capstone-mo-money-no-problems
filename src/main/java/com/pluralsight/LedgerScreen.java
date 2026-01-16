@@ -20,11 +20,11 @@ public class LedgerScreen {
             System.out.println("P) Payments - Display only the negative entries (or payments)");
             System.out.println("R) Reports - A new screen that allows the user to run pre-defined reports");
             System.out.println("H) Home - Go back to the Home Screen");
-            System.out.println("===$$$ Pick yo poison tell me watcha doin' $$$===");
+            System.out.println("===$$$ LEDGER MENU $$$===");
 
             String line = scanner.nextLine().trim();
             if (line.isEmpty()) {
-                System.out.println("No input detected dawg! — Choose a letter from the menu.");
+                System.out.println("No input detected! — Choose a letter from the menu.");
                 continue; // goes back to start of the loop
             }
             choice = Character.toUpperCase(line.charAt(0));
@@ -58,17 +58,17 @@ public class LedgerScreen {
                     break;
 
                 case 'H':
-                    System.out.println("Home - Let's hop back to the home screen!");
+                    System.out.println("Home - Goes back to home screen");
                     // Goes back to home screen
                     break;
 
                 case 'X':
-                    System.out.println("Exit- Let's bounce!");
+                    System.out.println("Exit");
                     // Exits
                     break;
 
                 default:
-                    System.out.println("Oh snap, invalid choice! Try that again playa!");
+                    System.out.println("Invalid choice! Please try that again");
 
 
             }
